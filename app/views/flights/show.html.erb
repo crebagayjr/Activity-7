@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Flights</h1>
+<p>
+  <strong>Departure:</strong>
+  <%= @flight.departure %>
+</p>
+
+<p>
+  <strong>Arrival:</strong>
+  <%= @flight.arrival %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @flight.destination %>
+</p>
+
+<p>
+  <strong>Baggage allowance:</strong>
+  <%= @flight.baggage_allowance %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @flight.capacity %>
+</p>
+
+                         <% #local variables%> 
+<%= render 'seat_index', seats: @flight.seats %>
+<%= render 'seat_form', seat: Seat.new, flight_id: @flight.id %>
+<%= link_to 'Edit', edit_flight_path(@flight) %> |
+<%= link_to 'Back', flights_path %>
